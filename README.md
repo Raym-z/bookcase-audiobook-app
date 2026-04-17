@@ -39,7 +39,6 @@
 </li>
 <li class="my-0"><a href="#screenshots">Screenshots</a></li>
 <li class="my-0"><a href="#contributing">Contributing</a></li>
-<li class="my-0"><a href="#license">License</a></li>
 </ul>
 
 <hr>
