@@ -245,7 +245,7 @@ CREATE POLICY "Users can update own history"
 <hr>
 
 <h2>Screenshots</h2>
-<p><em>Screenshots coming soon.</em></p>
+<img width="1866" height="948" alt="image" src="https://github.com/user-attachments/assets/7dc2396b-f2f6-4633-a34d-009b19faef9f" />
 
 <hr>
 
