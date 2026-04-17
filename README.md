@@ -1,10 +1,10 @@
 <div align="center">
 <h1>AUDIOBOOKS</h1>
 <p><em>Stream free public domain audiobooks with a Netflix-style experience — tracks your progress, saves favorites, and never makes you re-find where you were.</em></p>
-
-<img alt="last-commit" src="https://img.shields.io/github/last-commit/ThinkPad321/audiobook-app?style=flat&logo=git&logoColor=white&color=F5C518" class="inline-block mx-1" style="margin: 0px 2px;">
-<img alt="repo-top-language" src="https://img.shields.io/github/languages/top/ThinkPad321/audiobook-app?style=flat&color=F5C518" class="inline-block mx-1" style="margin: 0px 2px;">
-<img alt="repo-language-count" src="https://img.shields.io/github/languages/count/ThinkPad321/audiobook-app?style=flat&color=F5C518" class="inline-block mx-1" style="margin: 0px 2px;">
+  
+<img alt="last-commit" src="https://img.shields.io/github/last-commit/Raym-z/bookcase-audiobook-app?style=flat&logo=git&logoColor=white&color=F5C518" class="inline-block mx-1" style="margin: 0px 2px;">
+<img alt="repo-top-language" src="https://img.shields.io/github/languages/top/Raym-z/bookcase-audiobook-app?style=flat&color=F5C518" class="inline-block mx-1" style="margin: 0px 2px;">
+<img alt="repo-language-count" src="https://img.shields.io/github/languages/count/Raym-z/bookcase-audiobook-app?style=flat&color=F5C518" class="inline-block mx-1" style="margin: 0px 2px;">
 
 <p><em>Built with the tools and technologies:</em></p>
 <img alt="Next.js" src="https://img.shields.io/badge/Next.js-000000.svg?style=flat&logo=next.js&logoColor=white" class="inline-block mx-1" style="margin: 0px 2px;">
@@ -146,7 +146,7 @@
 <ol>
 <li class="my-0">
 <p><strong>Clone the repository:</strong></p>
-<pre><code class="language-sh">git clone https://github.com/ThinkPad321/audiobook-app
+<pre><code class="language-sh">git clone https://github.com/Raym-z/bookcase-audiobook-app
 </code></pre>
 </li>
 <li class="my-0">
@@ -260,11 +260,6 @@ CREATE POLICY "Users can update own history"
 <li class="my-0">Push to the branch (<code>git push origin feature/AmazingFeature</code>)</li>
 <li class="my-0">Open a Pull Request</li>
 </ol>
-
-<hr>
-
-<h2>License</h2>
-<p>This project is licensed under the MIT License — see the <a href="LICENSE">LICENSE</a> file for details.</p>
 
 <hr>
 
