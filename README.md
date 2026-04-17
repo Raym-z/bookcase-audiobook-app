@@ -277,5 +277,9 @@ Thanks to these platforms and open initiatives for making this possible:
 <img width="474" height="50" width="120" object-fit="contain" alt="Supabase" src="https://github.com/user-attachments/assets/fcc8622b-aa6e-46a9-8dd1-7c2dd39fbfb6" />
 <img width="474" height="50" width="120" object-fit="contain" alt="librivox" src="https://github.com/user-attachments/assets/dace48e8-f517-4514-b214-b993c9db38c6" />
 
-
+<p align="center">
+  <img src="https://cdn.simpleicons.org/vercel/ffffff" height="32"/>
+  <img src="https://cdn.simpleicons.org/supabase/3ECF8E" height="32"/>
+  <img src="https://cdn.simpleicons.org/readthedocs/ffffff" height="32"/>
+</p>
 
