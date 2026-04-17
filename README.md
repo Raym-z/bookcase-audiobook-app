@@ -1,4 +1,3 @@
-<img width="146" height="35" alt="Supabase 1" src="https://github.com/user-attachments/assets/c6a8e529-82aa-4a2e-87bb-576124bc0dcc" /><img width="146" height="35" alt="Supabase 1" src="https://github.com/user-attachments/assets/994588a0-3f07-42d0-8a99-c14f91d0018c" /><div align="center">
 <h1>AUDIOBOOKS</h1>
 <p><em>Stream free public domain audiobooks with a Netflix-style experience — tracks your progress, saves favorites, and never makes you re-find where you were.</em></p>
 
