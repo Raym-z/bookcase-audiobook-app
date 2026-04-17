@@ -273,7 +273,8 @@ CREATE POLICY "Users can update own history"
 </div>
 
 Thanks to these platforms and open initiatives for making this possible:
-<img height="50" width="120" object-fit="contain" alt="vercel" src="https://github.com/user-attachments/assets/6347c0cf-04ef-4580-a31f-83603b6bd2a0" />
-<img height="50" width="120" object-fit="contain" alt="Supabase" src="https://github.com/user-attachments/assets/fcc8622b-aa6e-46a9-8dd1-7c2dd39fbfb6" />
-<img height="50" width="120" object-fit="contain" alt="librivox" src="https://github.com/user-attachments/assets/dace48e8-f517-4514-b214-b993c9db38c6" />
+<img width="146" height="50" alt="Vercel" src="https://github.com/user-attachments/assets/6347c0cf-04ef-4580-a31f-83603b6bd2a0" />
+<img width="146" height="50" alt="Supabase" src="https://github.com/user-attachments/assets/63d4bfb9-82b2-4bfe-87f8-90155ad60607" />
+<img width="146" height="50" alt="Librivox" src="https://github.com/user-attachments/assets/f5172410-3346-4775-bdf3-ebe4bf7eb213" />
+
 
