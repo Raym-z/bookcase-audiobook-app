@@ -1,4 +1,4 @@
-<div align="center">
+<img width="146" height="35" alt="Supabase 1" src="https://github.com/user-attachments/assets/c6a8e529-82aa-4a2e-87bb-576124bc0dcc" /><img width="146" height="35" alt="Supabase 1" src="https://github.com/user-attachments/assets/994588a0-3f07-42d0-8a99-c14f91d0018c" /><div align="center">
 <h1>AUDIOBOOKS</h1>
 <p><em>Stream free public domain audiobooks with a Netflix-style experience — tracks your progress, saves favorites, and never makes you re-find where you were.</em></p>
 
@@ -273,8 +273,6 @@ CREATE POLICY "Users can update own history"
 </div>
 
 Thanks to these platforms and open initiatives for making this possible:
-<img width="146" height="50" alt="Vercel" src="https://github.com/user-attachments/assets/6347c0cf-04ef-4580-a31f-83603b6bd2a0" />
-<img width="146" height="50" alt="Supabase" src="https://github.com/user-attachments/assets/63d4bfb9-82b2-4bfe-87f8-90155ad60607" />
-<img width="146" height="50" alt="Librivox" src="https://github.com/user-attachments/assets/f5172410-3346-4775-bdf3-ebe4bf7eb213" />
+<img width="146" height="35" alt="Vercel" src="https://github.com/user-attachments/assets/6347c0cf-04ef-4580-a31f-83603b6bd2a0" /> <img width="146" height="35" alt="Supabase 1" src="https://github.com/user-attachments/assets/d1517892-faca-481e-bb3d-77aa4e14737f" /> <img width="146" height="35" alt="librivox 1" src="https://github.com/user-attachments/assets/2f47dc92-4cc9-4c70-b3de-3f5f823bf8a6" />
 
 
