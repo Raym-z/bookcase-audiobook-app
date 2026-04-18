@@ -9,6 +9,7 @@ import { usePlayerStore } from "@/stores/playerStore";
 import { useUser } from "@/hooks/useUser";
 import { isFavorite, addFavorite, removeFavorite } from "@/lib/favorites";
 import { ChapterRow } from "@/components/audiobook/ChapterRow";
+import { useToast } from "@/components/ui/ToastProvider";
 
 interface AudiobookDetailClientProps {
 	id: string;
@@ -18,6 +19,7 @@ export function AudiobookDetailClient({ id }: AudiobookDetailClientProps) {
 	const { user } = useUser();
 	const { currentBook, currentChapterIndex, play } = usePlayerStore();
 	const { setChapter } = usePlayerStore();
+	const { addToast } = useToast();
 	const [favorited, setFavorited] = useState(false);
 	const [showFullDesc, setShowFullDesc] = useState(false);
 	const [loadingFavorite, setLoadingFavorite] = useState(false);
@@ -33,7 +35,11 @@ export function AudiobookDetailClient({ id }: AudiobookDetailClientProps) {
 	}, [user, id]);
 
 	async function toggleFavorite() {
-		if (!user || !audiobook) return;
+		if (!user) {
+			addToast("Sign in to save favorites", "error");
+			return;
+		}
+		if (!audiobook) return;
 		setLoadingFavorite(true);
 		try {
 			if (favorited) {

@@ -2,13 +2,13 @@
 
 import { useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { Audiobook } from '@/types/audiobook';
+import { AudiobookCarousel } from '@/types/audiobook';
 import { AudiobookCard } from '@/components/audiobook/AudiobookCard';
 import { SkeletonRow } from '@/components/ui/Skeleton';
 
 interface CarouselRowProps {
   title: string;
-  audiobooks: Audiobook[];
+  audiobooks: AudiobookCarousel[];
   seeAllHref?: string;
   isLoading?: boolean;
 }
@@ -57,14 +57,14 @@ export function CarouselRow({ title, audiobooks, seeAllHref, isLoading }: Carous
         <button
           onClick={scrollLeft}
           aria-label="Scroll left"
-          className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-bg-card/80 backdrop-blur rounded-full flex items-center justify-center hover:bg-bg-hover transition-all opacity-0 group-hover/row:opacity-100 z-10 shadow-lg"
+          className="absolute left-0 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-bg-card/80 backdrop-blur rounded-full flex items-center justify-center hover:bg-bg-hover transition-all opacity-0 group-hover/row:opacity-100 z-10 shadow-lg"
         >
-          <ChevronLeft className="w-6 h-6 text-text-primary" />
+          <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-text-primary" />
         </button>
 
         <div
           ref={scrollRef}
-          className="flex gap-4 overflow-x-auto scrollbar-hide pb-4"
+          className="flex gap-3 sm:gap-4 overflow-x-auto scrollbar-hide pb-4"
         >
           {audiobooks.map((book) => (
             <AudiobookCard key={book.id} audiobook={book} size="md" />
@@ -74,9 +74,9 @@ export function CarouselRow({ title, audiobooks, seeAllHref, isLoading }: Carous
         <button
           onClick={scrollRight}
           aria-label="Scroll right"
-          className="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-bg-card/80 backdrop-blur rounded-full flex items-center justify-center hover:bg-bg-hover transition-all opacity-0 group-hover/row:opacity-100 z-10 shadow-lg"
+          className="absolute right-0 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-bg-card/80 backdrop-blur rounded-full flex items-center justify-center hover:bg-bg-hover transition-all opacity-0 group-hover/row:opacity-100 z-10 shadow-lg"
         >
-          <ChevronRight className="w-6 h-6 text-text-primary" />
+          <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-text-primary" />
         </button>
       </div>
     </section>

@@ -5,11 +5,15 @@ import { createContext, useContext, useState, useCallback, useEffect, ReactNode 
 interface SidebarContextValue {
   isExpanded: boolean;
   toggle: () => void;
+  isMobileOpen: boolean;
+  setMobileOpen: (open: boolean) => void;
 }
 
 const SidebarContext = createContext<SidebarContextValue>({
   isExpanded: true,
   toggle: () => {},
+  isMobileOpen: false,
+  setMobileOpen: () => {},
 });
 
 export function useSidebar() {
@@ -18,6 +22,7 @@ export function useSidebar() {
 
 export function SidebarProvider({ children }: { children: ReactNode }) {
   const [isExpanded, setIsExpanded] = useState(true);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.style.setProperty('--sidebar-width', '240px');
@@ -32,7 +37,7 @@ export function SidebarProvider({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <SidebarContext.Provider value={{ isExpanded, toggle }}>
+    <SidebarContext.Provider value={{ isExpanded, toggle, isMobileOpen, setMobileOpen: setIsMobileOpen }}>
       {children}
     </SidebarContext.Provider>
   );

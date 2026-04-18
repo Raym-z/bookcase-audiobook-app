@@ -54,7 +54,7 @@
 <li class="my-0">▶️ <strong>Infinite Listening:</strong> Pick up exactly where you left off. Progress is saved automatically as you listen.</li>
 <li class="my-0">❤️ <strong>Favorites Library:</strong> Save books you love and quickly find them later.</li>
 <li class="my-0">🎨 <strong>Netflix-Style UI:</strong> Dark theme with gold accents, carousel rows, and a responsive sidebar that adapts to your workflow.</li>
-<li class="my-0">🔐 <strong>Google Sign-In:</strong> Quick, secure authentication with Google OAuth.</li>
+<li class="my-0">🔐 <strong>Sign-In:</strong> Quick, secure authentication with Google OAuth or email/password.</li>
 <li class="my-0">📱 <strong>Responsive Design:</strong> Built with Tailwind CSS v4 — works on desktop and mobile.</li>
 </ul>
 
@@ -123,7 +123,7 @@
 <li><strong>State:</strong> Zustand (player state)</li>
 <li><strong>Backend:</strong> Supabase (Auth + Database + Realtime)</li>
 <li><strong>Data Source:</strong> LibriVox API (seeded into Supabase)</li>
-<li><strong>Auth:</strong> Google OAuth only</li>
+<li><strong>Auth:</strong> Google OAuth + Email/Password (both enabled)</li>
 <li><strong>Audio:</strong> Howler.js</li>
 <li><strong>Icons:</strong> Lucide React</li>
 <li><strong>Deployment:</strong> Vercel</li>
@@ -138,6 +138,7 @@
 <li><strong>Node.js:</strong> v18 or higher</li>
 <li><strong>Supabase:</strong> A Supabase project with the database schema set up</li>
 <li><strong>Google OAuth:</strong> Configured in Supabase for authentication</li>
+<li><strong>Email/Password:</strong> Enable the Email provider in Supabase Dashboard → Authentication → Providers. For email confirmations, set Confirm Email to OFF if you want users to sign in immediately without verification.</li>
 <li><strong>LibriVox API:</strong> No API key needed — free public API</li>
 </ul>
 

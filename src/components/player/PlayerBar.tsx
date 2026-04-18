@@ -81,8 +81,8 @@ export function PlayerBar() {
       }`}
       style={{ zIndex: 40 }}
     >
-      <div className="h-full px-4 flex items-center gap-4">
-        <div className="flex items-center gap-4 min-w-0 flex-shrink-0 w-64">
+      <div className="h-full px-4 sm:px-6 flex items-center gap-3 sm:gap-4">
+        <div className="hidden md:flex items-center gap-4 flex-shrink-0 w-64">
           {currentBook && (
             <>
               <div className="relative w-14 h-14 rounded-lg bg-bg-hover flex-shrink-0 overflow-hidden">
@@ -100,7 +100,7 @@ export function PlayerBar() {
                   </div>
                 )}
               </div>
-              <div className="min-w-0 hidden sm:block">
+              <div className="min-w-0">
                 <p className="text-sm font-medium text-text-primary truncate">
                   {chapter?.title || currentBook.title}
                 </p>
@@ -110,37 +110,37 @@ export function PlayerBar() {
           )}
         </div>
 
-        <div className="flex-1 flex flex-col items-center gap-2">
-          <div className="flex items-center gap-4">
+        <div className="flex-1 flex flex-col items-center gap-1 sm:gap-2 min-w-0">
+          <div className="flex items-center gap-3 sm:gap-5">
             <button
               onClick={prevChapter}
-              className="p-2 rounded-lg hover:bg-bg-hover transition-colors"
+              className="p-1 sm:p-2 rounded-lg hover:bg-bg-hover transition-colors"
               aria-label="Previous chapter"
             >
-              <SkipBack className="w-5 h-5 text-text-secondary" />
+              <SkipBack className="w-4 h-4 sm:w-5 sm:h-5 text-text-secondary" />
             </button>
             <button
               onClick={toggle}
-              className="p-3 rounded-full bg-accent hover:bg-accent-hover transition-colors"
+              className="p-2 sm:p-3 rounded-full bg-accent hover:bg-accent-hover transition-colors"
               aria-label={isPlaying ? 'Pause' : 'Play'}
             >
               {isPlaying ? (
-                <Pause className="w-6 h-6 text-bg-primary" />
+                <Pause className="w-5 h-5 sm:w-6 sm:h-6 text-bg-primary" />
               ) : (
-                <Play className="w-6 h-6 text-bg-primary" />
+                <Play className="w-5 h-5 sm:w-6 sm:h-6 text-bg-primary" />
               )}
             </button>
             <button
               onClick={nextChapter}
-              className="p-2 rounded-lg hover:bg-bg-hover transition-colors"
+              className="p-1 sm:p-2 rounded-lg hover:bg-bg-hover transition-colors"
               aria-label="Next chapter"
             >
-              <SkipForward className="w-5 h-5 text-text-secondary" />
+              <SkipForward className="w-4 h-4 sm:w-5 sm:h-5 text-text-secondary" />
             </button>
           </div>
 
-          <div className="w-full max-w-xl flex items-center gap-2">
-            <span className="text-xs text-text-muted w-12 text-right tabular-nums">
+          <div className="w-full max-w-[280px] sm:max-w-xl flex items-center gap-2">
+            <span className="text-xs text-text-muted w-10 text-right tabular-nums">
               {formatTime(progress)}
             </span>
             <div
@@ -157,13 +157,13 @@ export function PlayerBar() {
                 style={{ width: `${progressPercent}%` }}
               />
             </div>
-            <span className="text-xs text-text-muted w-12 tabular-nums">
+            <span className="text-xs text-text-muted w-10 tabular-nums">
               {formatTime(duration)}
             </span>
           </div>
         </div>
 
-        <div className="flex items-center gap-3 flex-shrink-0 w-48 justify-end">
+        <div className="hidden md:flex items-center gap-4 flex-shrink-0 w-48 justify-end">
           <button
             onClick={cycleSpeed}
             className="px-2 py-1 text-xs font-mono text-text-secondary bg-bg-hover rounded hover:bg-border transition-colors"

@@ -11,9 +11,14 @@ export async function GET(request: NextRequest) {
 
   const supabase = await createClient();
 
+  const LIST_SELECT = 'id, title, author, description, cover_url, language, num_sections, url, category';
+  const DETAIL_SELECT = 'id, title, author, description, cover_url, language, num_sections, url, chapters, category';
+
+  const includeChapters = searchParams.get('includeChapters') === 'true';
+
   let query = supabase
     .from('audiobooks')
-    .select('id, title, author, description, cover_url, language, num_sections, url, chapters, category');
+    .select(includeChapters ? DETAIL_SELECT : LIST_SELECT);
 
   if (title) {
     query = query.ilike('title', `%${title}%`);
@@ -39,16 +44,16 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  const audiobooks = (data ?? []).map((row) => ({
-    id: row.id,
-    title: row.title,
-    author: row.author,
-    description: row.description || '',
-    coverUrl: row.cover_url || '',
-    language: row.language || 'English',
-    numSections: row.num_sections || 0,
-    url: row.url || '',
-    chapters: row.chapters || [],
+  const audiobooks = ((data as unknown) as Record<string, unknown>[] ?? []).map((row) => ({
+    id: row.id as string,
+    title: row.title as string,
+    author: row.author as string,
+    description: (row.description as string) || '',
+    coverUrl: (row.cover_url as string) || '',
+    language: (row.language as string) || 'English',
+    numSections: (row.num_sections as number) || 0,
+    url: (row.url as string) || '',
+    chapters: (row.chapters as unknown[]) || [],
   }));
 
   return NextResponse.json(audiobooks);

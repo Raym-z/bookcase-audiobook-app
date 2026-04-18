@@ -3,19 +3,19 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Play } from 'lucide-react';
-import { Audiobook } from '@/types/audiobook';
+import { AudiobookCarousel } from '@/types/audiobook';
 import { cn } from '@/lib/utils';
 
 interface AudiobookCardProps {
-  audiobook: Audiobook;
+  audiobook: AudiobookCarousel;
   size?: 'sm' | 'md' | 'lg';
   className?: string;
 }
 
 const sizeClasses = {
-  sm: 'w-32',
-  md: 'w-44',
-  lg: 'w-56',
+  sm: 'w-28 sm:w-32',
+  md: 'w-36 sm:w-44',
+  lg: 'w-44 sm:w-56',
 };
 
 export function AudiobookCard({ audiobook, size = 'md', className }: AudiobookCardProps) {

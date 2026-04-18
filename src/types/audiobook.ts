@@ -10,6 +10,14 @@ export interface Audiobook {
   chapters: Chapter[];
 }
 
+export interface AudiobookCarousel {
+  id: string;
+  title: string;
+  author: string;
+  coverUrl: string;
+  category?: string;
+}
+
 export interface Chapter {
   id: string;
   title: string;

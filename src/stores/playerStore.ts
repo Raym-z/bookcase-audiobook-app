@@ -8,6 +8,7 @@ interface PlayerStore {
   progress: number;
   duration: number;
   playbackSpeed: number;
+  pendingSeekTime: number | null;
 
   play: () => void;
   pause: () => void;
@@ -21,6 +22,7 @@ interface PlayerStore {
   nextChapter: () => void;
   prevChapter: () => void;
   reset: () => void;
+  setPendingSeekTime: (seconds: number | null) => void;
 }
 
 export const usePlayerStore = create<PlayerStore>((set, get) => ({
@@ -30,6 +32,7 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
   progress: 0,
   duration: 0,
   playbackSpeed: 1,
+  pendingSeekTime: null,
 
   play: () => set({ isPlaying: true }),
   pause: () => set({ isPlaying: false }),
@@ -88,5 +91,8 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
       isPlaying: false,
       progress: 0,
       duration: 0,
+      pendingSeekTime: null,
     }),
+
+  setPendingSeekTime: (seconds) => set({ pendingSeekTime: seconds }),
 }));

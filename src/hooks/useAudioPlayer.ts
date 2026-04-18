@@ -69,7 +69,6 @@ export function useAudioPlayer() {
     if (!chapter) return;
 
     const chapterIdx = currentChapterIndex;
-    const bookId = currentBook?.id;
 
     // ✅ Prevent duplicate loads
     if (
@@ -103,6 +102,12 @@ export function useAudioPlayer() {
       onplay: () => {
         setDuration(sound.duration());
         startProgressLoop();
+        const pendingSeek = usePlayerStore.getState().pendingSeekTime;
+        if (pendingSeek !== null) {
+          sound.seek(pendingSeek);
+          setProgress(pendingSeek);
+          usePlayerStore.getState().setPendingSeekTime(null);
+        }
       },
 
       onpause: () => {
@@ -134,11 +139,6 @@ export function useAudioPlayer() {
     });
 
     howlRef.current = sound;
-
-    // save initial progress
-    if (userRef.current && bookId) {
-      saveProgress(userRef.current.id, currentBook!, chapterIdx, 0);
-    }
 
     return () => {
       // ❗ Only cleanup if we are actually switching chapters

@@ -3,37 +3,41 @@ import Link from 'next/link';
 import { Heart, Play } from 'lucide-react';
 import { createClient } from '@/lib/supabase/server';
 import { CarouselRow } from '@/components/ui/CarouselRow';
-import { Audiobook } from '@/types/audiobook';
-
-function mapRow(row: Record<string, unknown>): Audiobook {
-  return {
-    id: row.id as string,
-    title: row.title as string,
-    author: row.author as string,
-    description: (row.description as string) || '',
-    coverUrl: (row.cover_url as string) || '',
-    language: (row.language as string) || 'English',
-    numSections: (row.num_sections as number) || 0,
-    url: (row.url as string) || '',
-    chapters: (row.chapters as Audiobook['chapters']) || [],
-  };
-}
 
 async function getHomeData() {
   const supabase = await createClient();
 
   const [trending, recentlyAdded, librivoxPicks] = await Promise.all([
-    supabase.from('audiobooks').select('*').limit(20),
-    supabase.from('audiobooks').select('*').limit(20),
-    supabase.from('audiobooks').select('*').limit(20),
+    supabase.from('audiobooks').select('id, title, author, description, cover_url, category').limit(20),
+    supabase.from('audiobooks').select('id, title, author, cover_url, category').limit(20),
+    supabase.from('audiobooks').select('id, title, author, cover_url, category').limit(20),
   ]);
 
+  const mapTrending = (row: Record<string, unknown>) => ({
+    id: row.id as string,
+    title: row.title as string,
+    author: row.author as string,
+    description: (row.description as string) || '',
+    coverUrl: (row.cover_url as string) || '',
+    category: (row.category as string) || '',
+  });
+
+  const mapCarousel = (row: Record<string, unknown>) => ({
+    id: row.id as string,
+    title: row.title as string,
+    author: row.author as string,
+    coverUrl: (row.cover_url as string) || '',
+    category: (row.category as string) || '',
+  });
+
   return {
-    trending: (trending.data ?? []).map(mapRow),
-    recentlyAdded: (recentlyAdded.data ?? []).map(mapRow),
-    librivoxPicks: (librivoxPicks.data ?? []).map(mapRow),
+    trending: (trending.data ?? []).map(mapTrending),
+    recentlyAdded: (recentlyAdded.data ?? []).map(mapCarousel),
+    librivoxPicks: (librivoxPicks.data ?? []).map(mapCarousel),
   };
 }
+
+export const revalidate = 300;
 
 export default async function HomePage() {
   const { trending, recentlyAdded, librivoxPicks } = await getHomeData();
@@ -62,7 +66,7 @@ export default async function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-r from-bg-primary/40 to-transparent" />
           </div>
 
-          <div className="relative z-10 absolute bottom-0 left-0 p-8 md:p-12">
+          <div className="absolute bottom-0 left-0 right-0 z-10 p-8 md:p-12">
             <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-2">
               {hero.title}
             </h1>
@@ -98,7 +102,7 @@ export default async function HomePage() {
         </section>
       )}
 
-      <div className="px-4 md:px-8 py-8">
+      <div className="px-2 sm:px-4 md:px-8 py-6 sm:py-8">
         <CarouselRow title="Trending Now" audiobooks={trending} seeAllHref="/search" />
         <CarouselRow title="Recently Added" audiobooks={recentlyAdded} seeAllHref="/search" />
         <CarouselRow title="LibriVox Picks" audiobooks={librivoxPicks} seeAllHref="/search" />
