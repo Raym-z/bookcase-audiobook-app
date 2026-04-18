@@ -38,8 +38,8 @@ export default async function RootLayout({
 						<div className='flex-1 flex flex-col overflow-hidden lg:pl-[var(--sidebar-width)] transition-all duration-300'>
 							<Navbar user={user} />
 
-							<div className='flex-1 overflow-y-auto'>
-								<div className='px-4 md:px-8 py-6 pb-24'>{children}</div>
+							<div className='flex-1 overflow-y-auto flex flex-col'>
+								<div className='flex-1 px-4 md:px-8 py-6 pb-24'>{children}</div>
 								<Footer />
 							</div>
 
