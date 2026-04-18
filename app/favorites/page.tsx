@@ -48,9 +48,9 @@ export default function FavoritesPage() {
 
 	if (userLoading || loading) {
 		return (
-			<div className='flex-1 overflow-y-auto px-4 md:px-8 py-6'>
+			<div className='flex-1'>
 				<h1 className='text-3xl font-bold text-text-primary mb-8'>My Favorites</h1>
-				<div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 auto-rows-fr'>
+				<div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4'>
 					{Array.from({ length: 8 }).map((_, i) => (
 						<div key={i}>
 							<Skeleton.SkeletonCard />
@@ -67,7 +67,7 @@ export default function FavoritesPage() {
 
 	if (!user) {
 		return (
-			<div className='flex-1 overflow-y-auto px-4 md:px-8 py-6'>
+			<div className='flex-1'>
 				<h1 className='text-3xl font-bold text-text-primary mb-8'>My Favorites</h1>
 				<GuestGate type='favorites' />
 			</div>
@@ -75,11 +75,11 @@ export default function FavoritesPage() {
 	}
 
 	return (
-		<div className='flex-1 overflow-y-auto px-4 md:px-8 py-6'>
+		<div className='flex-1'>
 			<h1 className='text-3xl font-bold text-text-primary mb-8'>My Favorites</h1>
 
 			{favorites.length === 0 ? (
-				<div className='flex flex-col items-center justify-center min-h-[50vh] text-center'>
+				<div className='flex flex-col items-center justify-center min-h-[calc(100vh-var(--player-bar-height,80px)-160px)] text-center'>
 					<Heart className='w-20 h-20 text-text-muted mb-6' />
 					<h2 className='text-xl font-semibold text-text-primary mb-2'>No favorites yet</h2>
 					<p className='text-text-muted mb-6'>Start adding audiobooks to your favorites to see them here.</p>

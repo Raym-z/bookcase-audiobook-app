@@ -48,7 +48,7 @@ export default function ContinueListeningPage() {
 
 	if (userLoading || loading) {
 		return (
-			<div className='flex-1 overflow-y-auto px-4 md:px-8 py-6'>
+			<div className='flex-1'>
 				<h1 className='text-3xl font-bold text-text-primary mb-8'>Continue Listening</h1>
 				<div className='space-y-4'>
 					{Array.from({ length: 4 }).map((_, i) => (
@@ -69,7 +69,7 @@ export default function ContinueListeningPage() {
 
 	if (!user) {
 		return (
-			<div className='flex-1 overflow-y-auto px-4 md:px-8 py-6'>
+			<div className='flex-1'>
 				<h1 className='text-3xl font-bold text-text-primary mb-8'>Continue Listening</h1>
 				<GuestGate type='continue-listening' />
 			</div>
@@ -77,11 +77,11 @@ export default function ContinueListeningPage() {
 	}
 
 	return (
-		<div className='flex-1 overflow-y-auto px-4 md:px-8 py-6'>
+		<div className='flex-1'>
 			<h1 className='text-3xl font-bold text-text-primary mb-8'>Continue Listening</h1>
 
 			{history.length === 0 ? (
-				<div className='flex flex-col items-center justify-center min-h-[50vh] text-center'>
+				<div className='flex flex-col items-center justify-center min-h-[calc(100vh-var(--player-bar-height,80px)-160px)] text-center'>
 					<Clock className='w-20 h-20 text-text-muted mb-6' />
 					<h2 className='text-xl font-semibold text-text-primary mb-2'>Nothing in progress</h2>
 					<p className='text-text-muted mb-6'>Start listening to an audiobook and pick up where you left off.</p>

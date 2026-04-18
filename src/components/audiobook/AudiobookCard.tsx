@@ -13,9 +13,9 @@ interface AudiobookCardProps {
 }
 
 const sizeClasses = {
-  sm: 'w-28 sm:w-32',
-  md: 'w-36 sm:w-44',
-  lg: 'w-44 sm:w-56',
+  sm: 'w-28 sm:w-32 flex-shrink-0',
+  md: 'w-full sm:w-44 flex-shrink-0',
+  lg: 'w-full sm:w-56 flex-shrink-0',
 };
 
 export function AudiobookCard({ audiobook, size = 'md', className }: AudiobookCardProps) {
