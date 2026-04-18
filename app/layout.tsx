@@ -4,6 +4,7 @@ import { createClient } from '@/lib/supabase/server';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Navbar } from '@/components/layout/Navbar';
 import { PlayerBar } from '@/components/player/PlayerBar';
+import { Footer } from '@/components/layout/Footer';
 import { ClientLayout } from '@/components/ClientLayout';
 import './globals.css';
 
@@ -38,15 +39,18 @@ export default async function RootLayout({
           <div className="flex h-screen bg-bg-primary">
             <Sidebar />
 
-            <div className="flex-1 flex flex-col overflow-hidden lg:pl-[var(--sidebar-width)] transition-all duration-300">
-              <Navbar user={user} />
+              <div className="flex-1 flex flex-col overflow-hidden lg:pl-[var(--sidebar-width)] transition-all duration-300">
+                <Navbar user={user} />
 
-              <main className="flex-1 overflow-y-auto px-4 md:px-8 py-6 pb-24">
-                {children}
-              </main>
+                <div className="flex-1 overflow-y-auto">
+                  <div className="px-4 md:px-8 py-6 pb-24">
+                    {children}
+                  </div>
+                  <Footer />
+                </div>
 
-              <PlayerBar />
-            </div>
+                <PlayerBar />
+              </div>
           </div>
         </ClientLayout>
       </body>
