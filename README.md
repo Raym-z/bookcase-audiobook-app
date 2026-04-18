@@ -1,10 +1,10 @@
 <div align="center">
 <h1>AUDIOBOOKS</h1>
 <p><em>Stream free public domain audiobooks with a Netflix-style experience — tracks your progress, saves favorites, and never makes you re-find where you were.</em></p>
-
-<img alt="last-commit" src="https://img.shields.io/github/last-commit/ThinkPad321/audiobook-app?style=flat&logo=git&logoColor=white&color=F5C518" class="inline-block mx-1" style="margin: 0px 2px;">
-<img alt="repo-top-language" src="https://img.shields.io/github/languages/top/ThinkPad321/audiobook-app?style=flat&color=F5C518" class="inline-block mx-1" style="margin: 0px 2px;">
-<img alt="repo-language-count" src="https://img.shields.io/github/languages/count/ThinkPad321/audiobook-app?style=flat&color=F5C518" class="inline-block mx-1" style="margin: 0px 2px;">
+  
+<img alt="last-commit" src="https://img.shields.io/github/last-commit/Raym-z/bookcase-audiobook-app?style=flat&logo=git&logoColor=white&color=F5C518" class="inline-block mx-1" style="margin: 0px 2px;">
+<img alt="repo-top-language" src="https://img.shields.io/github/languages/top/Raym-z/bookcase-audiobook-app?style=flat&color=F5C518" class="inline-block mx-1" style="margin: 0px 2px;">
+<img alt="repo-language-count" src="https://img.shields.io/github/languages/count/Raym-z/bookcase-audiobook-app?style=flat&color=F5C518" class="inline-block mx-1" style="margin: 0px 2px;">
 
 <p><em>Built with the tools and technologies:</em></p>
 <img alt="Next.js" src="https://img.shields.io/badge/Next.js-000000.svg?style=flat&logo=next.js&logoColor=white" class="inline-block mx-1" style="margin: 0px 2px;">
@@ -39,7 +39,6 @@
 </li>
 <li class="my-0"><a href="#screenshots">Screenshots</a></li>
 <li class="my-0"><a href="#contributing">Contributing</a></li>
-<li class="my-0"><a href="#license">License</a></li>
 </ul>
 
 <hr>
@@ -147,7 +146,7 @@
 <ol>
 <li class="my-0">
 <p><strong>Clone the repository:</strong></p>
-<pre><code class="language-sh">git clone https://github.com/ThinkPad321/audiobook-app
+<pre><code class="language-sh">git clone https://github.com/Raym-z/bookcase-audiobook-app
 </code></pre>
 </li>
 <li class="my-0">
@@ -246,7 +245,7 @@ CREATE POLICY "Users can update own history"
 <hr>
 
 <h2>Screenshots</h2>
-<p><em>Screenshots coming soon.</em></p>
+<img width="1866" height="948" alt="image" src="https://github.com/user-attachments/assets/7dc2396b-f2f6-4633-a34d-009b19faef9f" />
 
 <hr>
 
@@ -264,11 +263,22 @@ CREATE POLICY "Users can update own history"
 
 <hr>
 
-<h2>License</h2>
-<p>This project is licensed under the MIT License — see the <a href="LICENSE">LICENSE</a> file for details.</p>
-
-<hr>
-
 <div align="left">
 <a href="#top">⬆ Return to Top</a>
 </div>
+
+Thanks to these platforms and open initiatives for making this possible:
+<table align="left">
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/6347c0cf-04ef-4580-a31f-83603b6bd2a0" height="35"><br>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/d1517892-faca-481e-bb3d-77aa4e14737f" height="35"><br>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/2f47dc92-4cc9-4c70-b3de-3f5f823bf8a6" height="35"><br>
+    </td>
+  </tr>
+</table>
+
