@@ -187,24 +187,24 @@ CREATE TABLE audiobooks (
 
 -- Favorites table
 CREATE TABLE favorites (
-  id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-  user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE NOT NULL,
-  audiobook_id TEXT NOT NULL,
-  audiobook_data JSONB NOT NULL,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  UNIQUE(user_id, audiobook_id)
+id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE NOT NULL,
+audiobook_id TEXT NOT NULL,
+audiobook_data JSONB NOT NULL,
+created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+UNIQUE(user_id, audiobook_id)
 );
 
 -- Listening history / progress table
 CREATE TABLE listening_history (
-  id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-  user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE NOT NULL,
-  audiobook_id TEXT NOT NULL,
-  audiobook_data JSONB NOT NULL,
-  chapter_index INTEGER DEFAULT 0,
-  progress_seconds INTEGER DEFAULT 0,
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  UNIQUE(user_id, audiobook_id)
+id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE NOT NULL,
+audiobook_id TEXT NOT NULL,
+audiobook_data JSONB NOT NULL,
+chapter_index INTEGER DEFAULT 0,
+progress_seconds INTEGER DEFAULT 0,
+updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+UNIQUE(user_id, audiobook_id)
 );
 
 -- Enable Row Level Security
@@ -217,18 +217,34 @@ CREATE POLICY "Allow anon read" ON audiobooks FOR SELECT USING (true);
 CREATE POLICY "Allow anon read" ON audiobooks FOR INSERT WITH CHECK (true);
 
 CREATE POLICY "Users can view own favorites"
-  ON favorites FOR SELECT USING (auth.uid() = user_id);
+ON favorites FOR SELECT USING (auth.uid() = user_id);
 CREATE POLICY "Users can insert own favorites"
-  ON favorites FOR INSERT WITH CHECK (auth.uid() = user_id);
+ON favorites FOR INSERT WITH CHECK (auth.uid() = user_id);
 CREATE POLICY "Users can delete own favorites"
-  ON favorites FOR DELETE USING (auth.uid() = user_id);
+ON favorites FOR DELETE USING (auth.uid() = user_id);
 
 CREATE POLICY "Users can view own history"
-  ON listening_history FOR SELECT USING (auth.uid() = user_id);
+ON listening_history FOR SELECT USING (auth.uid() = user_id);
 CREATE POLICY "Users can insert own history"
-  ON listening_history FOR INSERT WITH CHECK (auth.uid() = user_id);
+ON listening_history FOR INSERT WITH CHECK (auth.uid() = user_id);
 CREATE POLICY "Users can update own history"
-  ON listening_history FOR UPDATE USING (auth.uid() = user_id);
+ON listening_history FOR UPDATE USING (auth.uid() = user_id);
+
+alter table audiobooks add column views int default 0;
+alter table audiobooks add column featured boolean default false;
+alter table audiobooks add column source text;
+
+update audiobooks
+set views = floor(random() \* 10000)::int;
+
+update audiobooks
+set featured = (random() < 0.2);
+
+update audiobooks
+set source = 'librivox';
+
+update audiobooks
+set created_at = now() - (random() \* interval '90 days');
 </code></pre>
 
 <h3>Seeding Data</h3>
@@ -268,6 +284,7 @@ CREATE POLICY "Users can update own history"
 </div>
 
 Thanks to these platforms and open initiatives for making this possible:
+
 <table align="left">
   <tr>
     <td align="center">
@@ -281,4 +298,3 @@ Thanks to these platforms and open initiatives for making this possible:
     </td>
   </tr>
 </table>
-
